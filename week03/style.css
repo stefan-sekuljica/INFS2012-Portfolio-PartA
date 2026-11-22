@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 
-
+/* ===== Task 1 - Global Reset & Typography ===== */
 
 /* Universal reset */
 * {
@@ -43,7 +43,9 @@ footer {
   border-top: 1px solid #cccccc;
 }
 
+/* ===== Task 2 - Page Structure ===== */
 
+/* Branded header bar; flexbox puts the h1 and nav side by side */
 header {
   background-color: #990033;
   color: #ffffff;
@@ -57,7 +59,7 @@ header img {
   height: 48px;
 }
 
-
+/* Centre the main content within a max width */
 main {
   max-width: 860px;
   margin: 2rem auto 0;
@@ -71,7 +73,9 @@ aside {
   margin-top: 2rem;
 }
 
+/* ===== Task 3 - Flexbox Nav & Interactive States ===== */
 
+/* The nav links are in a <ul>, so the list is the flex row */
 nav ul {
   display: flex;
   gap: 0.5rem;
@@ -85,6 +89,8 @@ nav a {
   border-radius: 4px;
 }
 
+/* Divider between links; each link is inside its own <li>,
+   so :not(:last-child) is checked on the li */
 nav li:not(:last-child) a {
   border-right: 1px solid rgba(255, 255, 255, 0.25);
 }
@@ -99,6 +105,7 @@ nav a:focus-visible {
   outline-offset: 2px;
 }
 
+/* ===== Task 4 - Form Styling ===== */
 
 form {
   background-color: #ffffff;
@@ -111,7 +118,8 @@ form {
   gap: 1.5rem;
 }
 
-
+/* Each label + input pair is wrapped in a <p>, so that <p> is the grid.
+   form > p is the row holding the buttons. */
 fieldset p,
 form > p {
   display: grid;
@@ -139,7 +147,7 @@ form label {
   color: #333333;
 }
 
-
+/* Text-style inputs only (not checkboxes, radios or the range slider) */
 input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
 select,
 textarea {
@@ -166,11 +174,41 @@ button:hover {
   background-color: #770022;
 }
 
-
+/* Only inputs with a placeholder, and only once the user has typed */
 input[placeholder]:not(:placeholder-shown):valid {
   border-color: #28a745;
 }
 
 input[placeholder]:not(:placeholder-shown):invalid {
   border-color: #dc3545;
+}
+
+/* ===== Task 5 - Responsive Layout ===== */
+
+@media (max-width: 600px) {
+  /* Stack the h1 and nav, aligned to the left */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* The flex row is on nav ul, so that is what stacks */
+  nav ul {
+    flex-direction: column;
+  }
+
+  main {
+    padding: 0 1rem;
+  }
+
+  /* Collapse the form grid to one column */
+  fieldset p,
+  form > p {
+    grid-template-columns: 1fr;
+  }
+
+  button {
+    grid-column: 1;
+    width: 100%;
+  }
 }
