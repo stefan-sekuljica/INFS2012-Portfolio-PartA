@@ -45,3 +45,23 @@ showPasswordCheckbox.addEventListener('change', function (event) {
     passwordInput.type = 'password';
   }
 });
+
+
+// Task 3: Textarea Character Counter
+const commentsBox = document.getElementById('comments');
+
+const charCounter = document.createElement('small');
+charCounter.id = 'char-counter';
+commentsBox.insertAdjacentElement('afterend', charCounter);
+
+function updateCharCounter() {
+  const count = commentsBox.value.length;
+  if (count === 1) {
+    charCounter.textContent = '1 character';
+  } else {
+    charCounter.textContent = count + ' characters';
+  }
+}
+
+commentsBox.addEventListener('input', updateCharCounter);
+updateCharCounter();
