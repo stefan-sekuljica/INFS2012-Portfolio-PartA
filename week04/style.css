@@ -212,3 +212,62 @@ input[placeholder]:not(:placeholder-shown):invalid {
     width: 100%;
   }
 }
+
+/* ===== Week 4 - JavaScript Feedback Styles ===== */
+
+/* Task 4: error box at the top of the form */
+#error-container {
+  border: 2px solid #990033;
+  background-color: #fdeef2;
+  color: #990033;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+#error-container[hidden] {
+  display: none;
+}
+
+#error-container p {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+#error-container ul {
+  margin-left: 1.25rem;
+}
+
+/* Fields that failed validation */
+[aria-invalid="true"] {
+  outline: 2px solid #990033;
+  outline-offset: 1px;
+}
+
+/* Task 1: annual cost message spans the full width, not the grid column */
+#annual-cost-message {
+  display: block;
+  font-weight: 600;
+  color: #990033;
+}
+
+/* Task 2: show password checkbox sits under the password box */
+.show-password-label {
+  grid-column: 2;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* Task 3: character counter sits under the textarea */
+#char-counter {
+  grid-column: 2;
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+@media (max-width: 600px) {
+  /* One-column form on small screens */
+  .show-password-label,
+  #char-counter {
+    grid-column: 1;
+  }
+}
