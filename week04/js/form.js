@@ -65,3 +65,98 @@ function updateCharCounter() {
 
 commentsBox.addEventListener('input', updateCharCounter);
 updateCharCounter();
+
+
+// Task 4: In-Page Error Validation Before Submit
+const registrationForm = document.getElementById('registration-form');
+const errorContainer = document.getElementById('error-container');
+
+const fullNameInput = document.getElementById('fullname');
+const emailInput = document.getElementById('email');
+const usernameInput = document.getElementById('username');
+const termsCheckbox = document.getElementById('terms');
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function checkField(field, isValid, message, errors) {
+  if (isValid) {
+    field.setCustomValidity('');
+    field.removeAttribute('aria-invalid');
+  } else {
+    field.setCustomValidity(message);
+    field.setAttribute('aria-invalid', 'true');
+    errors.push(message);
+  }
+}
+
+function showErrors(errors) {
+  errorContainer.innerHTML = '';
+
+  const heading = document.createElement('p');
+  heading.textContent = 'Please fix the following before submitting:';
+  errorContainer.appendChild(heading);
+
+  const list = document.createElement('ul');
+  errors.forEach(function (message) {
+    const item = document.createElement('li');
+    item.textContent = message;
+    list.appendChild(item);
+  });
+  errorContainer.appendChild(list);
+
+  errorContainer.hidden = false;
+  errorContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function clearErrors() {
+  errorContainer.innerHTML = '';
+  errorContainer.hidden = true;
+}
+
+function handleFormSubmit(event) {
+  const errors = [];
+
+  checkField(fullNameInput, fullNameInput.value.trim().length >= 2,
+    'Full Legal Name must be at least 2 characters.', errors);
+
+  checkField(emailInput, emailPattern.test(emailInput.value.trim()),
+    'Primary Email Address must be a valid email, e.g. user@domain.com.', errors);
+
+  const usernameLength = usernameInput.value.trim().length;
+  checkField(usernameInput, usernameLength >= 4 && usernameLength <= 20,
+    'Preferred Username must be between 4 and 20 characters.', errors);
+
+  checkField(passwordInput, passwordInput.value.length >= 8,
+    'Account Password must be at least 8 characters.', errors);
+
+  checkField(termsCheckbox, termsCheckbox.checked,
+    'You must agree to the Terms of Service and Privacy Policy.', errors);
+
+  if (errors.length > 0) {
+    event.preventDefault();
+    showErrors(errors);
+  } else {
+    clearErrors();
+  }
+}
+
+registrationForm.addEventListener('submit', handleFormSubmit);
+
+registrationForm.addEventListener('input', function (event) {
+  if (event.target.hasAttribute('aria-invalid')) {
+    event.target.setCustomValidity('');
+    event.target.removeAttribute('aria-invalid');
+  }
+});
+
+registrationForm.addEventListener('reset', function () {
+  clearErrors();
+  setTimeout(function () {
+    updateCharCounter();
+    passwordInput.type = 'password';
+    const tierAfterReset = document.querySelector('input[name="tier"]:checked');
+    if (tierAfterReset) {
+      updateAnnualCost(tierAfterReset);
+    }
+  }, 0);
+});
