@@ -9,6 +9,7 @@
 </head>
 <body>
     <header>
+        <img src="logo.png" alt="Yellow smiley face logo" width="48" height="48">
         <h1>Community Member Registration Portal</h1>
         <nav>
             <ul>
@@ -19,8 +20,6 @@
             </ul>
         </nav>
     </header>
-
-    <hr>
 
     <main>
         <h2>Create Your Account</h2>
@@ -79,12 +78,10 @@
                     <input type="password" id="password" name="password" placeholder="At least 8 characters" minlength="8" required>
                 </p>
 
-                <fieldset>
-                    <legend>Select Membership Tier *</legend>
-                    <label><input type="radio" name="tier" value="free" checked required> Community Tier</label> Free forever. Public forums &amp; guides.<br>
-                    <label><input type="radio" name="tier" value="pro"> Pro Tier ($12/mo)</label> Workshop recordings &amp; code reviews.<br>
-                    <label><input type="radio" name="tier" value="enterprise"> Enterprise ($49/mo)</label> 1-on-1 mentorship &amp; team support.
-                </fieldset>
+                <p><strong>Select Membership Tier *</strong></p>
+                <label><input type="radio" name="tier" value="free" checked required> Community Tier</label> Free forever. Public forums &amp; guides.<br>
+                <label><input type="radio" name="tier" value="pro"> Pro Tier ($12/mo)</label> Workshop recordings &amp; code reviews.<br>
+                <label><input type="radio" name="tier" value="enterprise"> Enterprise ($49/mo)</label> 1-on-1 mentorship &amp; team support.
 
                 <p>
                     <label for="experience">Coding Experience (years)</label>
@@ -106,16 +103,14 @@
                     </select>
                 </p>
 
-                <fieldset>
-                    <legend>Subscriptions &amp; Email Updates</legend>
-                    <label><input type="checkbox" name="newsletter" value="weekly" checked> Weekly Technical Newsletter (Curated HTML/CSS articles)</label>
-                    <label><input type="checkbox" name="newsletter" value="webinars"> Upcoming Live Webinar Announcements &amp; Invites</label>
-                    <label><input type="checkbox" name="newsletter" value="releases"> Product Release Notes &amp; Platform Security Updates</label>
-                </fieldset>
+                <p><strong>Subscriptions &amp; Email Updates</strong></p>
+                <label><input type="checkbox" name="newsletter" value="weekly" checked> Weekly Technical Newsletter (Curated HTML/CSS articles)</label>
+                <label><input type="checkbox" name="newsletter" value="webinars"> Upcoming Live Webinar Announcements &amp; Invites</label>
+                <label><input type="checkbox" name="newsletter" value="releases"> Product Release Notes &amp; Platform Security Updates</label>
 
                 <p>
                     <label for="bio">Short Bio / Learning Goals</label>
-                    <textarea id="bio" name="bio" rows="3" cols="30" placeholder="Tell us briefly about your web development goals or interests."></textarea>
+                    <textarea id="bio" name="bio" rows="3" cols="30" placeholder="Tell us briefly about your web development goals or what you hope to gain from this community..."></textarea>
                 </p>
 
                 <p>
@@ -137,8 +132,6 @@
 
         <p><a href="page1.html">Return to Home Landing Page (Page 1)</a> Step 4 of 4</p>
     </main>
-
-    <hr>
 
     <footer>
         <p>&copy; 2026 My Web Project. Page 4 of 4.</p>
