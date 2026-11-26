@@ -9,6 +9,7 @@
 </head>
 <body>
     <header>
+        <img src="logo.png" alt="Yellow smiley face logo" width="48" height="48">
         <h1>HTML5 Semantic Markup &amp; Architecture Reference Guide</h1>
         <nav>
             <ul>
@@ -20,13 +21,10 @@
         </nav>
     </header>
 
-    <hr>
-
     <main>
         <section>
             <h2>Introduction to Semantic HTML Architecture</h2>
-            <p>Semantic HTML refers to the practice of writing markup that conveys the structural meaning and intent of web content rather than its aesthetic appearance. Using accurate HTML5 tags ensures that browsers, search engine crawlers, and screen readers can parse page content correctly.</p>
-            <p>When you use semantic tags like article, section, and header, you create a structured Document Object Model (DOM) tree that enhances page navigation, search engine ranking (SEO), and screen reader accessibility without requiring heavy JavaScript logic.</p>
+            <p>Semantic HTML refers to the practice of writing markup that conveys the structural meaning and intent of web content rather than its aesthetic appearance. Using accurate HTML5 tags ensures that browsers, search engine crawlers, and screen readers can parse page content correctly. When you use semantic tags like article, section, and header, you create a structured Document Object Model (DOM) tree that enhances page navigation, search engine ranking (SEO), and screen reader accessibility without requiring heavy JavaScript logic.</p>
         </section>
 
         <hr>
@@ -35,10 +33,10 @@
             <h2>Core Web Development Glossary</h2>
             <dl>
                 <dt><strong>DOM (Document Object Model)</strong></dt>
-                <dd>A platform- and language-neutral interface that treats an XML or HTML document as a tree structure wherein each node is an object representing a part of the document. The DOM allows scripts to dynamically update content, structure, and style.</dd>
+                <dd>A platform- and language-neutral interface that treats an XML or HTML document as a tree structure.</dd>
 
                 <dt><strong>Semantic HTML5</strong></dt>
-                <dd>The practice of using tags that accurately describe the purpose of the enclosed content (e.g., nav for navigation menus, main for primary content, and article for self-contained entries).</dd>
+                <dd>The practice of using tags that accurately describe the purpose of the enclosed content.</dd>
 
                 <dt><strong>Accessibility &amp; WAI-ARIA (a11y)</strong></dt>
                 <dd>Accessible Rich Internet Applications (ARIA) is a suite of attributes that define ways to make web content and applications more accessible to people with disabilities, specifically supplementing HTML where native semantics are insufficient.</dd>
@@ -111,66 +109,27 @@
 
         <section>
             <h3>Semantic Element Comparison Matrix</h3>
-            <table>
-                <caption>Comparison of common HTML5 semantic elements</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Tag</th>
-                        <th scope="col">Display Mode</th>
-                        <th scope="col">Primary Function</th>
-                        <th scope="col">Accessibility Role</th>
-                        <th scope="col">HTML5 Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Header Tag</th>
-                        <td>Block</td>
-                        <td>Contains introductory content, site titles, branding logos, or global navigation links.</td>
-                        <td>banner landmark</td>
-                        <td>Standardized</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Navigation Tag</th>
-                        <td>Block</td>
-                        <td>Encloses major navigation blocks such as menus, paginations, and table-of-contents links.</td>
-                        <td>navigation landmark</td>
-                        <td>Standardized</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Main Tag</th>
-                        <td>Block</td>
-                        <td>Encapsulates the dominant, non-repeating core content unique to the document.</td>
-                        <td>main landmark</td>
-                        <td>Standardized</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Article Tag</th>
-                        <td>Block</td>
-                        <td>Wraps reusable, self-contained compositions like blog posts, news stories, or forum entries.</td>
-                        <td>article landmark</td>
-                        <td>Standardized</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Mark Tag</th>
-                        <td>Inline</td>
-                        <td>Highlights specific text passages for reference or contextual relevance.</td>
-                        <td>Generic inline text</td>
-                        <td>Standardized</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="5">Summary: Semantic tags replace non-descriptive div containers for cleaner, native document parsing.</td>
-                    </tr>
-                </tfoot>
-            </table>
+            <dl>
+                <dt><strong>Header Tag:</strong></dt>
+                <dd>Display Mode: Block Primary Function: Contains introductory content, site titles, branding logos, or global navigation links. Accessibility Role: banner landmark HTML5 Status: Standardized</dd>
+
+                <dt><strong>Navigation Tag:</strong></dt>
+                <dd>Display Mode: Block Primary Function: Encloses major navigation blocks such as menus, paginations, and table-of-contents links. Accessibility Role: navigation landmark HTML5 Status: Standardized</dd>
+
+                <dt><strong>Main Tag:</strong></dt>
+                <dd>Display Mode: Block Primary Function: Encapsulates the dominant, non-repeating core content unique to the document. Accessibility Role: main landmark HTML5 Status: Standardized</dd>
+
+                <dt><strong>Article Tag:</strong></dt>
+                <dd>Display Mode: Block Primary Function: Wraps reusable, self-contained compositions like blog posts, news stories, or forum entries. Accessibility Role: article landmark HTML5 Status: Standardized</dd>
+
+                <dt><strong>Mark Tag:</strong></dt>
+                <dd>Display Mode: Inline Primary Function: Highlights specific text passages for reference or contextual relevance. Accessibility Role: Generic inline text HTML5 Status: Standardized</dd>
+            </dl>
+            <p>Summary: Semantic tags replace non-descriptive div containers for cleaner, native document parsing.</p>
         </section>
 
         <p><a href="page4.html">Proceed to Task 4: Complete Member Registration Form &rarr;</a></p>
     </main>
-
-    <hr>
 
     <footer>
         <p>&copy; 2026 My Web Project. Page 3 of 4.</p>
